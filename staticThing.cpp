@@ -76,10 +76,13 @@ int main(){
     cout <<"  statci对象"<< endl;
     if (x == 0){
         static Demo1 obj;
+        static int test = 9;
+        cout << " test = "<< test <<endl;
     }
     cout << "End of 第一个对象" << endl;
     cout <<" 非statci对象" <<endl;
     if (x == 0){
+        // 放在循环体中，说明声明周期
         Demo1 obj1;
     }
     cout <<"End of 第二个对象"<<endl;

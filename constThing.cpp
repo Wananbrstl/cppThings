@@ -1,7 +1,7 @@
 #include<iostream>
 
 using namespace std;
-
+/*
 int* const add_const(int a, int b){
     int c =(a+b);
     return &c;
@@ -10,11 +10,16 @@ const int* const_add(int a, int b){
     int c =(a+b);
     return &c;
 }
+*/
 int add(const int &a,const int &b) 
 {
     return a + b;
 }
 int main(int argc, char **argv){
+    if(1){
+        const int test = 1;
+    }
+    //cout << test;
     printf("\033[1;33m");
     printf("const的基本用法1： 修饰一些常量及数组\n");
     printf("比如： const int num = 13， 则 num 的数值无法被修改\n");
