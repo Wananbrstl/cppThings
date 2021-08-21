@@ -15,7 +15,7 @@ T add(T a, T b)
 
 int main(int argc, char **argv){
 
-    cout << "\033[0;32m";
+    cout << "\033[0;45m";
     cout<<"int类型: \n";
     int maxNum = Max(123,45);
     cout<<"maxNum = Max(123,45) the max number is : "<< maxNum<< endl;
