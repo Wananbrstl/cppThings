@@ -1,5 +1,21 @@
 #include"List.hpp"
 
+
+class Person
+{
+    public:
+        string name;
+        int age;
+        Person(){}
+        Person(string name, int age) {
+            this->name = name;
+            this->age = age;
+        }
+        void showInfo() const
+        {
+            cout << "name = " << name << "; age = " << age << endl;
+        }
+};
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -89,9 +105,61 @@ int main(int argc, char *argv[])
     list.printInt();
 
 
-    cout << "测试拷贝构造函数" << endl;
-    List<int> list2(list);
-    list2.printInt();
+    cout << "/////////////////其他类型数据结构///////////////////////" << endl;
+    Person data_p;
+    Person p1("Person1", 10);
+    Person p2("Person2", 13);
+    Person p3("Person3", 15);
+    List<Person> person_list;
+    person_list.push_back(p1);
+    person_list.push_back(p2);
+    cout << "push_back p1 p2" << endl;
+    
+    person_list.getElem(2,data_p);
+    cout << person_list.getSize() << ": " << data_p.name << "  " << data_p.age << endl;
+    cout << " size = "<< person_list.getSize() << endl;
+
+    cout << "add(1,p1) add(3,p3)" << endl;
+    person_list.add(1, p1);
+    person_list.add(3, p3);
+
+    flag = person_list.getElem(1,data_p);
+    cout << "done? : " << flag << endl;
+    if(flag)
+    {
+        cout << "1: " << "name = " << data_p.name << " age = " << data_p.age << endl;
+    }
+
+    flag = person_list.getElem(2,data_p);
+    cout << "done? : " << flag << endl;
+    if(flag)
+    {
+        cout << "2: " << "name = " << data_p.name << " age = " << data_p.age << endl;
+    }
+    flag = person_list.getElem(3,data_p);
+    cout << "done? : " << flag << endl;
+    if(flag)
+    {
+        cout << "3: " << "name = " << data_p.name << " age = " << data_p.age << endl;
+    }
+    flag = person_list.getElem(4,data_p);
+    cout << "done? : " << flag << endl;
+    cout << "size of " << person_list.getSize() << endl;
+    if(flag)
+    {
+        cout << "4: " << "name = " << data_p.name << " age = " << data_p.age << endl;
+    }
+    cout << "//////////////////////MODIFY///////////////////////" << endl;
+    Person modifyPerson("modify", 1);
+    flag = person_list.modifyElem(2,modifyPerson);
+    flag = person_list.getElem(2,data_p);
+    cout << "done? : " << flag << endl;
+    if(flag)
+    {
+        cout << "2: " << "name = " << data_p.name << " age = " << data_p.age << endl;
+    }
+    //person_list.modifyElem(2,p3);
+    //cout << "name = " << data.name << " age = " << data.age << endl;
     return 0;
 }
 

@@ -35,9 +35,9 @@ public:
         {
             ptr2 = ptr2->next;
             struct single_list_node<T>* tempPtr = new struct single_list_node<T>;
+            tempPtr->data = ptr2->data;
             ptr1->next = tempPtr;
             ptr1 = ptr1->next;
-            ptr1->data = ptr2->data;
         }
         cout << "拷贝构造函数完成" << endl;
     }
@@ -76,11 +76,12 @@ public:
     {
         // 移动指针
         struct single_list_node<T>* tempPtr = head_;
+        // 移动到第num - 1个位置
         for(int i = 0; i < num; i++)
         {
             // 得到第num个元素的指针
             tempPtr = tempPtr->next;
-            if(tempPtr->next->next == NULL && i != num - 1)
+            if(tempPtr->next == NULL && i != num - 1)
             {
                 return false;
             }
@@ -94,10 +95,11 @@ public:
         struct single_list_node<T>* tempPtrNext = tempPtr->next;
         tempPtr->next = newNode;
         // 不是尾部的话
-        if(tempPtrNext->next != nullptr)
+        if(tempPtrNext != NULL)
         {
             // 尾部插入
             newNode->next = tempPtrNext;
+            cout << "中间位置add" << endl;
         }
         return true;
     }
