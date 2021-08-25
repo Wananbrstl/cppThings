@@ -73,6 +73,17 @@ int main(){
     cout << "---------------------" << endl;
     cout << " 关于++++,----等符号"  << endl;
     cout << "处理过程为贪心算法， 一个字符一个字符读取， 直到不是一个运算" << endl;
-    
+
+    int arry[3] = {1,2,3};
+    int* ptr_arry = arry;
+    for(int i = 0; i < 3; i++)
+    {
+        printf("arry[%d] = %d\n", i, arry[i]);
+    }
+    cout << "arry = " << arry << endl;
+    cout << "ptr_arry = " << ptr_arry << endl;
+    cout << "&ptr_arry = " << &ptr_arry << endl;
+    cout << "ptr_arry[2] = " << ptr_arry[2] << endl;
+
     return 0;
 }

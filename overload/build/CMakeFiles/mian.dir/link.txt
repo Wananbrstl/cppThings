@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/mian.dir/src/main.cpp.o CMakeFiles/mian.dir/src/plus.cpp.o  -o mian 

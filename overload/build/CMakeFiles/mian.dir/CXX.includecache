@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/plus.h
+iostream
+-
+
+/home/lbn/桌面/cppThings/overload/src/main.cpp
+iostream
+-
+string
+-
+plus.h
+-
+
